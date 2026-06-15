@@ -3,11 +3,11 @@
 <details>
     <sumary>Resposta: <sumary>
     log2(128) = 7
-<details>
+</details>
 
 # 1.2 Suponha que você duplique o tamanho da lista. Qual seria o número máximo de etapas agora?
 
 <details>
     <sumary>Resposta: <sumary>
     log2(256) = 8
-<details>
+</details>
