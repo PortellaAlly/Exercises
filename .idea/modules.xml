@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/exercicios.iml" filepath="$PROJECT_DIR$/.idea/exercicios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Leet-codes/palindrome-number/palindrome-number.iml" filepath="$PROJECT_DIR$/Leet-codes/palindrome-number/palindrome-number.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Leet-codes/twosum/twosum.iml" filepath="$PROJECT_DIR$/Leet-codes/twosum/twosum.iml" />
+    </modules>
+  </component>
+</project>
