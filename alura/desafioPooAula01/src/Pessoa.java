@@ -1,6 +1,6 @@
 public class Pessoa {
 
-    String Cumprimentar(){
-        return "Ola mundo!";
+    void Cumprimentar(){
+        System.out.println("Hello world!");
     }
 }
