@@ -12,7 +12,7 @@ public class Musica {
         System.out.println("foi lancada em: " + anoLancamento);
     }
 
-    void DarNota(int nota){
+    void DarNota(double nota){
         somaAvaliacoes += nota;
         numAvaliacoes++;
     }

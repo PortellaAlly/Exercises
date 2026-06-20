@@ -10,7 +10,19 @@ public class Main {
         System.out.println(result);
 
         // Question 03
+        Musica musica = new Musica();
+        musica.titulo = "Feet Don't Fail Me Now";
+        musica.artista = "Joy Crookes";
+        musica.anoLancamento = 2021;
 
+        musica.ExibirFichaTecnica();
+
+        musica.DarNota(8);
+        musica.DarNota(9);
+        musica.DarNota(7.5);
+
+        double mediaNotaDaMusica = musica.FazerMediaAvaliacoes();
+        System.out.println("A media de " + musica.titulo + " eh de " + mediaNotaDaMusica);
     }
 }
 
