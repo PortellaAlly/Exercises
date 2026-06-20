@@ -11,6 +11,7 @@ public class Main {
 
         // Question 03
         Musica musica = new Musica();
+
         musica.titulo = "Feet Don't Fail Me Now";
         musica.artista = "Joy Crookes";
         musica.anoLancamento = 2021;
@@ -23,6 +24,16 @@ public class Main {
 
         double mediaNotaDaMusica = musica.FazerMediaAvaliacoes();
         System.out.println("A media de " + musica.titulo + " eh de " + mediaNotaDaMusica);
+
+        // Question 04
+        Carro carro = new Carro();
+
+        carro.modelo = "Ford K";
+        carro.cor = "preta";
+        carro.FichaTecnica();
+
+        int anoDoCarro = carro.AnoDoCarro();
+        System.out.println(anoDoCarro);
     }
 }
 
