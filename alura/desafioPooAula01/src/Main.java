@@ -8,6 +8,9 @@ public class Main {
         Calculadora calculadora = new Calculadora();
         double result = calculadora.Dobro(67);
         System.out.println(result);
+
+        // Question 03
+
     }
 }
 
