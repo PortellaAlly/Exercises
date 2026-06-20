@@ -6,7 +6,8 @@ public class Main {
 
         // Question 02
         Calculadora calculadora = new Calculadora();
-        calculadora.Dobro(67);
+        double result = calculadora.Dobro(67);
+        System.out.println(result);
     }
 }
 
