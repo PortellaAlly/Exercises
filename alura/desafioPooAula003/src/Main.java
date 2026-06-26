@@ -1,5 +1,7 @@
 import QuestDois.Cachorro;
 import QuestDois.Gato;
+import QuestTres.ContaBancaria;
+import QuestTres.ContaCorrente;
 import QuestUm.ModeloCarro;
 
 
@@ -30,6 +32,8 @@ public class Main {
         System.out.println(gato.getNome());
 
         // Questao 3
-
+        ContaCorrente contaCorrente = new ContaCorrente();
+        contaCorrente.setSaldo(-4);
+        contaCorrente.consultarSaldo();
         }
 }
