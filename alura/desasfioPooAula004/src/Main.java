@@ -1,3 +1,4 @@
+import QuestaoDois.CalculadoraSalaRetangular;
 import QuestaoUm.ConversorMoeda;
 
 public class Main {
@@ -8,6 +9,9 @@ public class Main {
         conversorMoeda.converterDolarParaReal(5);
 
         // Questão 2
-        
+        CalculadoraSalaRetangular calculadoraSalaRetangular = new CalculadoraSalaRetangular();
+
+        calculadoraSalaRetangular.calcularArea(22,13);
+        calculadoraSalaRetangular.calcularPerimetro(13,22);
     }
 }
