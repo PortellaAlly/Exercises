@@ -1,4 +1,5 @@
 import QuestaoDois.CalculadoraSalaRetangular;
+import QuestaoTres.TabuadaMultiplicacao;
 import QuestaoUm.ConversorMoeda;
 
 public class Main {
@@ -13,5 +14,10 @@ public class Main {
 
         calculadoraSalaRetangular.calcularArea(22,13);
         calculadoraSalaRetangular.calcularPerimetro(13,22);
+
+        // Questao 3
+        TabuadaMultiplicacao tabuadaMultiplicacao = new TabuadaMultiplicacao();
+
+        tabuadaMultiplicacao.mostrarTabuada(2);
     }
 }
