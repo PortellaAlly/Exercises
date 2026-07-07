@@ -14,5 +14,8 @@ public class Main {
         for(Produto produto : produtos){
             System.out.println(produto);
         }
+
+        ProdutoPerecivel produtoPerecivel = new ProdutoPerecivel("Hamburguer", 22.99,67, "13/12/2013");
+        System.out.println(produtoPerecivel);
     }
 }
