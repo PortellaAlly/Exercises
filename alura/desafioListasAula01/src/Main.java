@@ -8,5 +8,9 @@ public class Main {
         Produto produto2 = new Produto("Espada laser", 12.99, 22);
 
         produtos.add(produto1); produtos.add(produto2);
+        System.out.println(produtos.size());
+        System.out.println(produtos.get(1).getNome());
+
+
     }
 }
