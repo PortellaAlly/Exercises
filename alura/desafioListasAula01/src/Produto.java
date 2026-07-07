@@ -20,4 +20,9 @@ public class Produto {
     public int getQuant() {
         return quant;
     }
+
+    @Override
+    public String toString(){
+        return "Produto [Nome: " + nome + ", preço: " + preco + ", quantidade= " + quant + "]";
+    }
 }

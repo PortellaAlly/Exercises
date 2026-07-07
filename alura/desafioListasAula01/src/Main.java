@@ -11,6 +11,8 @@ public class Main {
         System.out.println(produtos.size());
         System.out.println(produtos.get(1).getNome());
 
-
+        for(Produto produto : produtos){
+            System.out.println(produto);
+        }
     }
 }
