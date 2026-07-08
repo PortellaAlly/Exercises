@@ -17,5 +17,13 @@ public class Main {
         Cachorro cachorro = new Cachorro();
         Animal animal = (Animal) cachorro;
 
+        // Question 3
+        Animal animal1 = new Cachorro();
+        if(animal1 instanceof Cachorro){
+            Cachorro cachorro1 = (Cachorro) animal1;
+        } else {
+            System.out.println("nao eh um chacorro");
+        }
+
     }
 }
