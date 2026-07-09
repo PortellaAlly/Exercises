@@ -27,12 +27,14 @@ public class Main {
             scanner.nextLine();
         }
 
+        UserDecisions userDecisions = new UserDecisions();
+
         System.out.println("Do you want to start buying?(Y/N)");
-        String userDecisions = scanner.nextLine().toUpperCase();
+        userDecisions.setYorn(scanner.nextLine());
 
         List<Products> products = new ArrayList<>();
 
-        while (userDecisions.equals("Y")) {
+        while (userDecisions.getYorn().equals("Y")) {
                     String productName = "";
                     int price = 0;
                     System.out.println("What is the product name? ");
@@ -45,16 +47,19 @@ public class Main {
 
                     products.add(new Products(productName, price));
 
-                    System.out.println("Do you want to continue buying?(Y/N)");
-                    userDecisions = scanner.nextLine().toUpperCase();
+                    System.out.println("\nDo you want to continue buying?(Y/N)");
+                    userDecisions.setYorn(scanner.nextLine());
+                    System.out.println("\n\n\n\n");
 
-                    if (Objects.equals(userDecisions, "N")) {
-                        switch() {
+                    if (Objects.equals(userDecisions.getYorn(), "N")) {
+                        /*switch(userDecisions.getVal()) {
+                            case 1:
 
-                        }
+                        }*/
 
                         System.out.println("Do you want to go back and buy more? (This will end the system)");
-                        userDecisions = scanner.nextLine().toUpperCase();
+                        userDecisions.setYorn(scanner.nextLine());
+                        System.out.println("\n\n\n\n");
                     }
 
             }

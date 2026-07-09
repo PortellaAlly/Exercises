@@ -7,7 +7,7 @@ public class UserDecisions {
     }
 
     public void setYorn(String yorn) {
-        this.yorn = yorn;
+        this.yorn = yorn.toUpperCase();
     }
 
     public int getVal() {
