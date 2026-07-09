@@ -18,7 +18,8 @@ public class Conta {
     public void setLimite(int limite) {
         if(limite > 0) {
             this.limite = limite;
+        } else {
+            System.out.println("Limite invalido");
         }
-        System.out.println("Limite invalido");
     }
 }
