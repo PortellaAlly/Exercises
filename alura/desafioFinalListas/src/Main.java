@@ -28,28 +28,32 @@ public class Main {
         }
 
         System.out.println("Do you want to start buying?(Y/N)");
-        String userDecisions = scanner.nextLine();
+        String userDecisions = scanner.nextLine().toUpperCase();
 
         List<Products> products = new ArrayList<>();
 
-        if(Objects.equals(userDecisions, "Y")){
-            while (userDecisions.equals("Y")) {
-                String productName = "";
-                int price = 0;
-                System.out.println("What is the product name? ");
-                productName = scanner.nextLine();
+        while (userDecisions.equals("Y")) {
+                    String productName = "";
+                    int price = 0;
+                    System.out.println("What is the product name? ");
+                    productName = scanner.nextLine();
 
-                System.out.println("How much does it cost?");
-                price = scanner.nextInt();
-                scanner.nextLine();
+                    System.out.println("How much does it cost?");
+                    price = scanner.nextInt();
+                    scanner.nextLine();
 
-                products.add(new Products(productName, price));
-                System.out.println("Do you want to continue buying?(Y/N)");
+                    products.add(new Products(productName, price));
+
+                    System.out.println("Do you want to continue buying?(Y/N)");
+                    userDecisions = scanner.nextLine().toUpperCase();
+
+                    if (Objects.equals(userDecisions, "N")) {
+
+                        System.out.println("Do you want to go back and buy more? (This will end the system)");
+                        userDecisions = scanner.nextLine().toUpperCase();
+                    }
+
             }
-        } else if (userDecisions == "N") {
-            System.out.println(" s");
-        }
-
-
+            System.out.println("Terminating the process.");
     }
 }
