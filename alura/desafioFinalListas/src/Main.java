@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -52,14 +49,36 @@ public class Main {
                     System.out.println("\n\n\n\n");
 
                     if (Objects.equals(userDecisions.getYorn(), "N")) {
-                        /*switch(userDecisions.getVal()) {
+                        System.out.println("""
+                                      *********************
+                                Options by now:
+                                0 - Go back to the buying system
+                                1 - Check your bill
+                                2 - End the system
+                                      *********************
+                                """);
+                        userDecisions.setVal(scanner.nextInt());
+                        scanner.nextLine();
+                        switch(userDecisions.getVal()) {
+                            case 0:
+                                System.out.println("Do you want to go back and buy more?(Y/N) (This will also end the system)");
+                                userDecisions.setYorn(scanner.nextLine());
+                                System.out.println("\n\n\n\n");
+                                break;
+
                             case 1:
+                                products.sort(Comparator.comparing(Products::getPrice));
+                                System.out.println("Your bill is: ");
+                                for(Products products1 : products){
+                                    System.out.println(products1.getName() + products1.getPrice());
+                                }
+                                break;
 
-                        }*/
+                            case 2:
+                                System.exit(0);
+                        }
 
-                        System.out.println("Do you want to go back and buy more? (This will end the system)");
-                        userDecisions.setYorn(scanner.nextLine());
-                        System.out.println("\n\n\n\n");
+
                     }
 
             }
