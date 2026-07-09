@@ -15,7 +15,8 @@ public class Main {
         System.out.println(".");
         TimeUnit.MILLISECONDS.sleep(500);
 
-
+        System.out.println("What is your name?");
+        account.setName(scanner.nextLine());
 
         while(account.getLimit() <= 0) {
             System.out.println("Write down your credit card limit");
