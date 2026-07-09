@@ -19,7 +19,7 @@ public class Main {
         account.setName(scanner.nextLine());
 
         while(account.getLimit() <= 0) {
-            System.out.println("Write down your credit card limit");
+            System.out.println("Hello, " + account.getName() + ". Could you write down your credit card limit? (Don't use broken numbers)");
             account.setLimit(scanner.nextInt());
         }
 

@@ -7,7 +7,7 @@ public class Account {
         return name;
     }
 
-    public void setName(String nome) {
+    public void setName(String name) {
         this.name = name;
     }
 
