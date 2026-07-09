@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -23,25 +24,29 @@ public class Main {
         while(account.getLimit() <= 0) {
             System.out.println("Hello, " + account.getName() + ". Could you write down your credit card limit? (Don't use broken numbers)");
             account.setLimit(scanner.nextInt());
+            scanner.nextLine();
         }
 
         System.out.println("Do you want to start buying?(Y/N)");
+        String userDecisions = scanner.nextLine();
 
-        String userDecicions = scanner.nextLine();
         List<Products> products = new ArrayList<>();
-        int i = 0;
 
-        if(userDecicions == "Y"){
-            while (userDecicions == "Y") {
-                i++;
-
+        if(Objects.equals(userDecisions, "Y")){
+            while (userDecisions.equals("Y")) {
+                String productName = "";
+                int price = 0;
                 System.out.println("What is the product name? ");
-                
-                System.out.println("How much does it cost?");
+                productName = scanner.nextLine();
 
+                System.out.println("How much does it cost?");
+                price = scanner.nextInt();
+                scanner.nextLine();
+
+                products.add(new Products(productName, price));
                 System.out.println("Do you want to continue buying?(Y/N)");
             }
-        } else if (userDecicions == "N") {
+        } else if (userDecisions == "N") {
             System.out.println(" s");
         }
 

@@ -1,20 +1,25 @@
 public class Products {
-    private int preco;
-    private int nome;
+    private int price;
+    private String name;
 
-    public int getPreco() {
-        return preco;
+    public Products(String productName, int price){
+        this.name = productName;
+        this.price = price;
     }
 
-    public void setPreco(int preco) {
-        this.preco = preco;
+    public int getPrice() {
+        return price;
     }
 
-    public int getNome() {
-        return nome;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public void setNome(int nome) {
-        this.nome = nome;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(int nome) {
+        this.name = name;
     }
 }
