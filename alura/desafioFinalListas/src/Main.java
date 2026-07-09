@@ -70,8 +70,11 @@ public class Main {
                                 products.sort(Comparator.comparing(Products::getPrice));
                                 System.out.println("Your bill is: ");
                                 for(Products products1 : products){
-                                    System.out.println(products1.getName() + products1.getPrice());
+                                    System.out.println("Name: " + products1.getName() + "\nPrice: " + products1.getPrice() + "\n");
                                 }
+                                System.out.println("\n\nDo you want to go back and buy more?(Y/N) (This will also end the system)");
+                                userDecisions.setYorn(scanner.nextLine());
+                                System.out.println("\n\n\n\n");
                                 break;
 
                             case 2:
