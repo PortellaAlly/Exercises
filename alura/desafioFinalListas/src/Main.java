@@ -41,6 +41,7 @@ public class Main {
                     System.out.println("How much does it cost?");
                     price = scanner.nextInt();
                     scanner.nextLine();
+                    account.setLimit(account.getLimit() - price);
 
                     products.add(new Products(productName, price));
 
@@ -48,6 +49,9 @@ public class Main {
                     userDecisions = scanner.nextLine().toUpperCase();
 
                     if (Objects.equals(userDecisions, "N")) {
+                        switch() {
+
+                        }
 
                         System.out.println("Do you want to go back and buy more? (This will end the system)");
                         userDecisions = scanner.nextLine().toUpperCase();
