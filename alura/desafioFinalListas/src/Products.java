@@ -1,4 +1,4 @@
-public class Produtos {
+public class Products {
     private int preco;
     private int nome;
 

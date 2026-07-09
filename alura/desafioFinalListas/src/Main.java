@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
-        Conta conta = new Conta();
+        Account account = new Account();
 
         System.out.print("Initializing");
         TimeUnit.MILLISECONDS.sleep(300);
@@ -17,9 +17,9 @@ public class Main {
 
 
 
-        while(conta.getLimite() <= 0) {
-            System.out.println("Digite seu limite");
-            conta.setLimite(scanner.nextInt());
+        while(account.getLimit() <= 0) {
+            System.out.println("Write down your credit card limit");
+            account.setLimit(scanner.nextInt());
         }
 
 
