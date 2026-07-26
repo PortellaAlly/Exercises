@@ -117,7 +117,6 @@ public class AdopetConsoleApplication {
         int statusCode = response.statusCode();
         if (statusCode == 404 || statusCode == 500) {
             System.out.println("ID ou nome não cadastrado!");
-            continue;
         }
         String responseBody = response.body();
         JsonArray jsonArray = JsonParser.parseString(responseBody).getAsJsonArray();
@@ -140,12 +139,11 @@ public class AdopetConsoleApplication {
         System.out.println("Digite o nome do arquivo CSV:");
         String nomeArquivo = new Scanner(System.in).nextLine();
 
-        BufferedReader reader;
+        BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(nomeArquivo));
         } catch (IOException e) {
             System.out.println("Erro ao carregar o arquivo: " +nomeArquivo);
-            continue;
         }
         String line;
         while ((line = reader.readLine()) != null) {
@@ -189,7 +187,7 @@ public class AdopetConsoleApplication {
         }
         reader.close();
     }
-    
+
 
 
 }
