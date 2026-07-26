@@ -31,7 +31,7 @@ public class AdopetConsoleApplication {
                 opcaoEscolhida = Integer.parseInt(textoDigitado);
 
                 if (opcaoEscolhida == 1) {
-                        cadastrarAbrigo();
+                        listarAbrigo();
                 } else if (opcaoEscolhida == 2) {
                     System.out.println("Digite o nome do abrigo:");
                     String nome = new Scanner(System.in).nextLine();
@@ -159,7 +159,7 @@ public class AdopetConsoleApplication {
         }
     }
 
-    private static void cadastrarAbrigo() throws IOException, InterruptedException {
+    private static void listarAbrigo() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         String uri = "http://localhost:8080/abrigos";
         HttpRequest request = HttpRequest.newBuilder()
