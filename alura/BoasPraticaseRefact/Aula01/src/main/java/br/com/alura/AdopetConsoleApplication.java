@@ -1,6 +1,7 @@
 package br.com.alura;
 
 import br.com.alura.service.AbrigoService;
+import br.com.alura.service.PetService;
 import com.google.gson.*;
 
 import java.io.BufferedReader;
@@ -15,6 +16,8 @@ import java.util.Scanner;
 public class AdopetConsoleApplication {
     public static void main(String[] args) throws IOException, InterruptedException {
         AbrigoService abrigoService = new AbrigoService();
+        PetService petService = new PetService();
+
         System.out.println("##### BOAS VINDAS AO SISTEMA ADOPET CONSOLE #####");
         try {
             int opcaoEscolhida = 0;
@@ -34,9 +37,9 @@ public class AdopetConsoleApplication {
                 } else if (opcaoEscolhida == 2) {
                     abrigoService.cadastrarAbrigo();
                 } else if (opcaoEscolhida == 3) {
-                    listarPetsAbrigo();
+                    petService.listarPetsAbrigo();
                 } else if (opcaoEscolhida == 4) {
-                    importarPets();
+                    petService.importarPets();
                 } else if (opcaoEscolhida == 5) {
                     break;
                 } else {

@@ -15,8 +15,8 @@ import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class PetService {
-    
-    private void listarPetsAbrigo() throws IOException, InterruptedException {
+
+    public void listarPetsAbrigo() throws IOException, InterruptedException {
         System.out.println("Digite o id ou nome do abrigo:");
         String idOuNome = new Scanner(System.in).nextLine();
 
@@ -42,7 +42,7 @@ public class PetService {
         }
     }
 
-    private void importarPets() throws IOException, InterruptedException {
+    public void importarPets() throws IOException, InterruptedException {
         System.out.println("Digite o id ou nome do abrigo:");
         String idOuNome = new Scanner(System.in).nextLine();
 
