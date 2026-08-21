@@ -10,10 +10,31 @@ public class Pet {
         this.cor = cor;
     }
 
+    private Long id;
     private String tipo;
     private String nome;
     private String raca;
     private int idade;
     private String cor;
     private float peso;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getRaca() {
+        return raca;
+    }
 }
