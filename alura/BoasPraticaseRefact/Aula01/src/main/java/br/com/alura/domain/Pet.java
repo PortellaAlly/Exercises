@@ -37,4 +37,12 @@ public class Pet {
     public String getRaca() {
         return raca;
     }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
 }
