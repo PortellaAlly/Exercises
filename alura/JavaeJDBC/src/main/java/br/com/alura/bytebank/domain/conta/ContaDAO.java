@@ -76,6 +76,36 @@ public class ContaDAO {
         return contas;
     }
 
+    public Conta consultarNumero(Integer numero){
+        Set<Conta> contas = new HashSet<>();
+
+        String sql = "SELECT * FROM conta WHERE numero = ?";
+
+        try{
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, numero);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                numero = resultSet.getInt(1);
+                BigDecimal saldo = resultSet.getBigDecimal(2);
+                String nome = resultSet.getString(3);
+                String cpf = resultSet.getString(4);
+                String email = resultSet.getString(5);
+
+                DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(nome, cpf, email);
+                Cliente cliente = new Cliente(dadosCadastroCliente);
+
+                contas.add(new Conta(numero, cliente));
+            }
+
+        } catch(SQLException e){
+            throw new RuntimeException(e);
+        }
+
+        return null;
+    }
+
     public BigDecimal consultarSaldo(Integer numero) {
         String sql = "SELECT saldo FROM conta WHERE numero = ?";
 
