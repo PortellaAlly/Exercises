@@ -27,8 +27,8 @@ public class ContaService {
     }
 
     public BigDecimal consultarSaldo(Integer numeroDaConta) {
-        var conta = buscarContaPorNumero(numeroDaConta);
-        return conta.getSaldo();
+        Connection conn = connection.recuperarConexao();
+        return new ContaDAO(conn).consultarSaldo(numeroDaConta);
     }
 
     public void abrir(DadosAberturaConta dadosDaConta) {

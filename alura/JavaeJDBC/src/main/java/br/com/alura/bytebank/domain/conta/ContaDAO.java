@@ -53,7 +53,7 @@ public class ContaDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 Integer numero = resultSet.getInt(1);
                 BigDecimal saldo = resultSet.getBigDecimal(2);
                 String nome = resultSet.getString(3);
@@ -74,5 +74,31 @@ public class ContaDAO {
         }
 
         return contas;
+    }
+
+    public BigDecimal consultarSaldo(Integer numero) {
+        String sql = "SELECT saldo FROM conta WHERE numero = ?";
+
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, numero);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()) {
+                System.out.println("conta encontrada");
+                BigDecimal saldo = resultSet.getBigDecimal(1);
+
+                resultSet.close();
+                preparedStatement.close();
+                conn.close();
+
+                return saldo;
+            } else {
+                System.out.println("Conta nao encontrada!");
+            }
+        } catch(SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 }
