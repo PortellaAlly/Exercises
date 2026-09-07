@@ -96,9 +96,13 @@ public class ContaDAO {
             } else {
                 System.out.println("Conta nao encontrada!");
             }
+            resultSet.close();
+            preparedStatement.close();
+            conn.close();
+
+            return null;
         } catch(SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
     }
 }
