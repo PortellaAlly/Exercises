@@ -77,14 +77,16 @@ public class ContaDAO {
     }
 
     public Conta consultarNumero(Integer numero){
-        Set<Conta> contas = new HashSet<>();
+        Conta conta = null;
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
 
         String sql = "SELECT * FROM conta WHERE numero = ?";
 
         try{
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setInt(1, numero);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()){
                 numero = resultSet.getInt(1);
@@ -96,14 +98,18 @@ public class ContaDAO {
                 DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(nome, cpf, email);
                 Cliente cliente = new Cliente(dadosCadastroCliente);
 
-                contas.add(new Conta(numero, cliente));
+                conta = new Conta(numero, cliente);
             }
+
+            resultSet.close();
+            preparedStatement.close();
+            conn.close();
 
         } catch(SQLException e){
             throw new RuntimeException(e);
         }
 
-        return null;
+        return conta;
     }
 
     public BigDecimal consultarSaldo(Integer numero) {
@@ -134,5 +140,10 @@ public class ContaDAO {
         } catch(SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void alterar (Integer numero, BigDecimal valor) {
+        PreparedStatement preparedStatement;
+        String sql = "UPDATE conta SET saldo = ? WHERE numero = ?";
     }
 }
