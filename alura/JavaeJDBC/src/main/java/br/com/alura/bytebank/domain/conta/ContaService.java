@@ -56,8 +56,8 @@ public class ContaService {
         if (valor.compareTo(BigDecimal.ZERO) <= 0) {
             throw new RegraDeNegocioException("Valor do deposito deve ser superior a zero!");
         }
-        Connection conn = connection.recuperarConexao();
-        java.math.BigDecimal valorAdicionado = new ContaDAO(conn).consultarSaldo(numeroDaConta).add(valor);
+        
+        BigDecimal valorAdicionado = conta.getSaldo().add(valor);
         alterar(conta, valorAdicionado);
     }
 
