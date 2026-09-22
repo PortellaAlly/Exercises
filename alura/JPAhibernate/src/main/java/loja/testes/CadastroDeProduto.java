@@ -1,6 +1,7 @@
 package loja.testes;
 
 import loja.dao.ProdutoDAO;
+import loja.modelo.Categoria;
 import loja.modelo.Produto;
 import loja.util.JPAUtil;
 
@@ -12,11 +13,7 @@ import java.math.BigDecimal;
 public class CadastroDeProduto {
 
     public static void main(String[] args) {
-        Produto celular = new Produto();
-
-        celular.setNome("Xiaomi Redmi");
-        celular.setDescricao("Bem massa visse");
-        celular.setPreco(new BigDecimal("800"));
+        Produto celular = new Produto("Xiaomi Redmi", "Bem massa visse", new BigDecimal("800"), Categoria.CELULARES);
 
         EntityManager em = JPAUtil.getEntityManager();
         ProdutoDAO dao = new ProdutoDAO(em);
