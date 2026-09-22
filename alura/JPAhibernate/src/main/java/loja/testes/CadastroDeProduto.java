@@ -1,6 +1,8 @@
 package loja.testes;
 
+import loja.dao.ProdutoDAO;
 import loja.modelo.Produto;
+import loja.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,13 +18,12 @@ public class CadastroDeProduto {
         celular.setDescricao("Bem massa visse");
         celular.setPreco(new BigDecimal("800"));
 
-        EntityManagerFactory factory = Persistence
-                .createEntityManagerFactory("JPApersistence");
-
-        EntityManager em = factory.createEntityManager();
+        EntityManager em = JPAUtil.getEntityManager();
+        ProdutoDAO dao = new ProdutoDAO(em);
 
         em.getTransaction().begin();
-        em.persist(celular);
+        dao.cadastrar(celular);
         em.getTransaction().commit();
+        em.close();
     }
 }
