@@ -8,6 +8,7 @@ import loja.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
+import java.util.List;
 
 public class CadastroDeProduto {
 
@@ -20,6 +21,9 @@ public class CadastroDeProduto {
 
         Produto p = produtoDAO.buscarPorId(1l);
         System.out.println(p.getPreco());
+
+        List<Produto> todos = produtoDAO.buscarTodos();
+        todos.forEach(p2 -> System.out.println(p.getNome()));
     }
 
     private static void cadastrarProduto() {
