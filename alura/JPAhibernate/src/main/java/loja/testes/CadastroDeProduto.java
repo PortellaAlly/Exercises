@@ -13,7 +13,7 @@ import java.util.List;
 public class CadastroDeProduto {
 
     public static void main(String[] args) {
-        cadastrarProduto();
+        //cadastrarProduto();
         Long id = 1l;
 
         EntityManager em = JPAUtil.getEntityManager();
@@ -22,8 +22,8 @@ public class CadastroDeProduto {
         Produto p = produtoDAO.buscarPorId(1l);
         System.out.println(p.getPreco());
 
-        List<Produto> todos = produtoDAO.buscarTodos();
-        todos.forEach(p2 -> System.out.println(p.getNome()));
+        List<Produto> todos = produtoDAO.buscarPorNome("Iphone 11");
+        todos.forEach(p2 -> System.out.println(p2.getNome()));
     }
 
     private static void cadastrarProduto() {
@@ -31,11 +31,10 @@ public class CadastroDeProduto {
 
         Categoria celulares = new Categoria("CELULARES");
 
-        Produto celular = new Produto("Xiaomi Redmi", "Bem massa visse", new BigDecimal("800"), celulares);
+        Produto celular = new Produto("Iphone 11", "Bem massa", new BigDecimal("900"), celulares);
 
         CategoriaDAO categoriaDAO = new CategoriaDAO(em);
         ProdutoDAO produtoDAO = new ProdutoDAO(em);
-
         em.getTransaction().begin();
 
         categoriaDAO.cadastrar(celulares);
