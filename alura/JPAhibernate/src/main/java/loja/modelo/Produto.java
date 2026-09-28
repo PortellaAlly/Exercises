@@ -1,5 +1,7 @@
 package loja.modelo;
 
+import loja.dao.ProdutoDAO;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -18,6 +20,9 @@ public class Produto {
 
     @ManyToOne
     private Categoria categoria;
+
+    public Produto(){
+    }
 
     public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
         this.nome = nome;
